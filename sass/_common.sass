@@ -47,48 +47,957 @@
 // p
 // 	+jpg(bla)
 
+@import url("http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic,300&subset=latin,cyrillic-ext")
+=rob
+	font-family: 'Roboto', sans-serif
+	font-weight: 400
+
+*
+	+box
+
 
 body
-	font-family: Arial, sans-serif 
-	font-size: 12px 
+	font-size: 14px 
 	line-height: 1.4
+	+rob
+	// &.is-fixed
+	// 	overflow: hidden
+	a
+		text-decoration: none
+		+transition(all .1s linear)
+
+// ico
+.ico
+	display: inline-block
+	&.ico-phone
+		+s(ico-phone)
+	&.ico-address
+		+s(ico-address)
+	&.ico-schedule
+		+s(ico-schedule)
+	&.ico-repair
+		+s(ico-repair)
+	&.ico-bmwm
+		+s(ico-bmwm)
+	&.ico-mini
+		+s(ico-mini)
+	&.ico-nav1
+		+s(ico-nav1)
+	&.ico-nav2
+		+s(ico-nav2)
+	&.ico-nav3
+		+s(ico-nav3)
+	&.ico-nav4
+		+s(ico-nav4)
+	&.ico-nav5
+		+s(ico-nav5)
+	&.ico-nav6
+		+s(ico-nav6)
+	&.ico-nav7
+		+s(ico-nav7)
+	&.ico-nav8
+		+s(ico-nav8)
+	&.ico-vk
+		+s(ico-vk)
+	&.ico-f
+		+s(ico-f)
+	&.ico-tw
+		+s(ico-tw)
+	&.ico-schnitzer
+		+s(ico-gray-schnitzer)
+		&:hover
+			+s(ico-schnitzer)
+	&.ico-alpina
+		+s(ico-gray-alpina)
+		&:hover
+			+s(ico-alpina)
+	&.ico-hamann
+		+s(ico-gray-hamann)
+		&:hover
+			+s(ico-hamann)
+	&.ico-rbey
+		+s(ico-gray-rbey)
+		&:hover
+			+s(ico-rbey)
+	&.ico-hardge
+		+s(ico-gray-hardge)
+		&:hover
+			+s(ico-hardge)
+
+// btn
+.btn
+	position: relative
+	padding: 0 30px
+	height: 54px
+	line-height: 52px
+	font-size: 17px
+	font-weight: 700
+	text-shadow: (0 -1px 0 rgba(0, 0, 0, 0.26))
+	text-decoration: none
+	color: #fff
+	text-align: center
+	background: #00a8ff
+	+background-image(linear-gradient(-10deg, #007bb6 0%, #00a8ff 100%))
+	+box-shadow(0 1px 3px rgba(0, 0, 0, 0.47), inset 0 1px 0 rgba(255, 255, 255, 0.78))
+	+border-radius(4px)
+	display: inline-block
+	+transition(all .2s linear)
+	&:hover
+		+background-image(linear-gradient(-50deg, #007bb6 0%, #00a8ff 100%))
+		top: -1px
+	&.btn_topic
+		padding-left: 80px
+		.btn__ico
+			position: absolute
+			top: 1px
+			left: 0
+			bottom: 0
+			text-align: center
+			width: 58px
+			border-right: 1px solid #5cc7fe
+			+box-shadow(inset -1px 0 0 #007dbd)
+		.ico
+			vertical-align: middle
+
+.out
+	height: 100%
+	height: auto
+	min-height: 100%
+	padding-bottom: 97px
+
+// in
+.in
+	margin: 0 auto
+	padding: 0 35px
+	width: 1200px
+	+box
+	+clr
+
+//  header
+.header
+	position: relative
+	margin-bottom: 5px
+	padding-bottom: 5px
+	height: 108px
+	border-bottom: 5px solid #245da1
+	&:before
+		position: absolute
+		content: ''
+		height: 5px
+		left: 0
+		bottom: 0
+		width: 100%
+		background-color: #62BBFF
+		+box-shadow(0 1px 5px rgba(0, 0, 0, 0.2))
+	&:after
+		position: absolute
+		content: ''
+		height: 5px
+		left: 0
+		bottom: -10px
+		height: 5px
+		width: 100%
+		background: #e6171b
+	.in
+		position: relative
+	.logo,
+	.menu
+		vertical-align: top
+		display: inline-block
+	.menu
+		margin: 42px 0 0 60px
+
+// logo
+.logo
+	margin-top: 16px
+	+s(logo)
+
+// menu
+.menu
+	font-size: 0
+	.menu__item	
+		margin-left: 32px
+		display: inline-block
+		&:first-child
+			margin-left: 0
+	a
+		color: #363636
+		font-weight: 700
+		font-size: 14px
+		text-transform: uppercase
+		text-decoration: none
+		&:hover,
+		&.is-active
+			color: #007BB6
+
+// contact
+.contact
+	position: absolute
+	top: 0
+	right: 35px
+	height: 108px
+	width: 309px
+	z-index: 1
+	background: #f0f0f0
+	+box-shadow(0 1px 5px rgba(0, 0, 0, 0.29))
+
+// callback address
+.callback,
+.address
+	padding: 8px
+	.address__ico,
+	.callback__ico
+		position: relative
+		height: 18px
+		width: 36px
+		display: inline-block
+		vertical-align: top
+		.ico
+			position: absolute
+			top: 50%
+			left: 50%
+			+translate(-50%, -50%)
+.callback
+	background: #fff
+	+clr
+	font-weight: 500
+	.callback__phone
+		float: left
+		margin-top: 6px
+		font-size: 18px
+	.callback__ico
+		height: 25px
+	.callback__btn
+		float: right
+		padding: 0 8px
+		width: 81px
+		height: 34px
+		line-height: 32px
+		span
+			line-height: 1
+			font-size: 13px
+			font-weight: 500
+			vertical-align: middle
+			display: inline-block
+
+// address
+.address
+	font-size: 13px
+	font-weight: 400
+	font-style: normal
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.51)
+	.address__schedule
+		margin-top: 5px
+
+// tooic
+.topic
+	padding: 28px 0 26px
+	background: url(../img/topic-bg.png) no-repeat 50% 50%
+	background-size: cover
+	.topic__left
+		float: left
+	.topic__right
+		float: right
+		margin-right: 10px
+	.topic__text
+		position: relative
+		width: 490px
+		font-size: 32px
+		font-weight: 700
+		line-height: 0.7
+		text-transform: uppercase
+		&:before
+			position: absolute
+			content: ''
+			top: 50%
+			right: -70px
+			margin-top: -24.5px
+			+s(ico-arrbtn)
+		span
+			font-size: 18px
+			font-weight: 500
+			text-transform: initial
+	&.topic_home
+		padding: 78px 0
+		background: url(../img/topic-bg-home.png) no-repeat 50% 88%
+		.topic__text
+			margin-bottom: 30px
+			&:before
+				top: 54px
+				right: -20px
+
+// lineup
+.filter
+	padding: 20px 0 18px
+	background: #f7f7f7
+	.filter__text
+		font-size: 16px
+		font-weight: 500
+		line-height: 29px
+		display: inline-block
+	.filter__list
+		margin-left: 50px
+		font-size: 0
+	.filter__item
+		margin-left: 30px
+		line-height: 29px
+		&:first-child
+			margin-left: 0
+		a
+			color: #000
+			font-size: 20px
+			text-decoration: none
+			font-weight: 500
+			text-transform: uppercase
+			vertical-align: middle
+			line-height: 1.4
+			&:hover,
+			&.is-active
+				color: #007BB6
+	.filter__list,
+	.filter__item
+		vertical-align: top
+		display: inline-block
+
+// col-left
+.col-left
+	float: left
+	margin-top: 43px
+	width: 238px
+
+// col-right
+.col-right
+	float: right
+	width: 892px
+	padding-top: 44px
+	border-left: 1px solid #dfdfdf
+	+box
+	h1, h2, h3
+		font-weight: 700
+		line-height: 1.2
+		text-transform: uppercase
+	h3, h4, h5, h6
+		margin: 20px 0
+	h1
+		font-size: 32px
+	h2
+		font-size: 22px
+		span
+			text-transform: initial
+	h3
+		font-size: 20px
+	h4
+		font-size: 18px
+		font-weight: 500
+	h5
+		font-size: 18px
+		font-weight: 500
+		font-style: italic
+	h6
+		font-size: 16px
+		font-weight: 700
+
+// content
+.content
+	padding-left: 48px
+	+box
+	h1
+		margin-bottom: 25px
+	h2
+		margin: 35px 0 20px
+	p
+		margin: 8px 0
+	ul
+		li
+			position: relative
+			margin-top: 4px
+			padding-left: 30px
+			&:before
+				position: absolute
+				content: ''
+				top: 8px
+				left: 15px
+				width: 4px
+				height: 4px
+				background-color: #BBB
+			&:first-child
+				margin-top: 0
+	table
+		margin-bottom: 50px
+		border: 1px solid #dfdfdf
+		tr
+			&:nth-child(odd)
+				background: #efefef
+		th
+			height: 70px
+			line-height: 70px
+			color: #FFF
+			font-size: 16px
+			background: #3d3d3d
+		td
+			color: #2F2F2F
+			height: 50px
+			line-height: 50px
+			font-size: 13px
+			border-left: 1px solid #dfdfdf
+			&:first-child
+				border: none
+		th,
+		td
+			text-align: center
+			font-weight: 400
+			+box
+			&:first-child
+				width: 464px
+				text-align: left
+				padding: 0 98px 0 25px
+			span
+				line-height: 1.2
+				vertical-align: middle
+				display: inline-block
+	.lists
+		margin: 18px 0
+		ul
+			margin-left: 20px
+			display: inline-block
+			&:first-child
+				margin-left: 0
+
+// blue-block
+.blue-block
+	padding: 15px 70px 15px 22px
+	color: #FFF
+	font-size: 15px
+	line-height: 1.2
+	font-weight: 500
+	border-left: 6px solid #62aeff
+	background: #135aa4
+
+// services
+.services
+	margin: 40px 0 50px
+	font-size: 0
+	.services__item
+		margin-left: 19px
+		width: 196px
+		color: #FFF
+		text-align: center
+		font-size: 15px
+		line-height: 1.3
+		vertical-align: top
+		display: inline-block
+		&:hover
+			+opacity(.9)
+			text-decoration: underline
+		&:first-child
+			margin-left: 0
+	.services__img
+		position: relative
+		height: 110px
+		overflow: hidden
+		img
+			position: absolute
+			top: 50%
+			left: 50%
+			+translate(-50%, -50%)
+			display: block
+	.services__text
+		padding: 7px 28px 
+		height: 56px
+		background-color: #3d3d3d
+	
+.series
+	margin-bottom: 56px
+	font-size: 0
+	.series__row
+		margin-top: 10px
+		&:first-child
+			margin-top: 0
+	.series__item
+		margin-left: 19px
+		width: 153px
+		font-size: 16px
+		font-weight: 500
+		text-align: center
+		text-transform: uppercase
+		color: #000
+		display: inline-block
+		&:hover
+			+transform(scale(1.1))
+		&:first-child
+			margin-left: 0
+	.series__img
+		position: relative
+		height: 110px
+		img
+			position: absolute
+			top: 50%
+			left: 0
+			width: 100%
+			+translate(0, -50%)
+	.series__name
+		padding: 0 12px
+		height: 30px
+		line-height: 30px
+		background-color: white
+		+box-shadow(0 1px 6px rgba(0, 0, 0, 0.27))
+		display: inline-block
+		.ico
+			vertical-align: sub
+
+// block-gray
+.block-gray
+	margin-right: -40px
+	border-top: 1px solid #dfdfdf
+	border-bottom: 1px solid #dfdfdf
+	background: #efefef
+
+.galery
+	padding: 35px 55px 42px 50px
+	.galery__slider
+		margin: 32px 0 0 8px
+		width: 826px
+		.slick-next,
+		.slick-prev
+			margin-top: -14px
+			&:hover
+				+opacity(.8)
+			&:before
+				display: none
+		.slick-next
+			right: -25px
+			+s(arr-right)
+		.slick-prev
+			left: -35px
+			+s(arr-left)
+	.dalery__wrap
+		position: relative
+	.galery__btn
+		position: absolute
+		left: -10px
+		bottom: -10px
+		width: 40px
+		height: 40px
+		z-index: 200
+		background-color: #007BB6
+		&:before
+			position: absolute
+			content: ''
+			top: 50%
+			left: 50%
+			+translate(-50%, -50%)
+			+s(galery-ico)
+
+// news
+.news
+	+clr
+	p
+		margin: 5px 0
+	.news__left
+		float: left
+		padding: 36px 44px 28px
+		width: 505px
+		font-size: 13px
+		letter-spacing: -0.2px
+		border-right: 1px solid #dfdfdf
+		+box
+	.news__right
+		float: right
+		padding-bottom: 34px
+		width: 426px
+		text-align: center
+		.comment
+			margin-top: 49px
+			display: inline-block
+	.news__row
+		margin: 20px 0 35px
+	.news__item
+		margin-left: 20px
+		width: 196px
+		vertical-align: top
+		display: inline-block
+		&:first-child
+			margin-left: 0
+	.news__img
+		position: relative
+		margin-bottom: 18px
+		height: 110px
+		overflow: hidden
+		img
+			position: absolute
+			top: 0
+			left: 50%
+			height: 100%
+			+translate(-50%, 0)
+			display: block
+	.news__title
+		margin-bottom: 8px
+		color: #007BB6
+		font-size: 16px
+		&:hover
+			text-decoration: underline
+	.news__all
+		text-align: right
+		a
+			color: #007bb6
+			font-size: 13px
+			font-weight: 400
+			&:hover
+				text-decoration: underline
+
+// date
+.date
+	color: #8C8C8C
+	font-size: 13px	
 
 
-// common blocks      
+.comment
+	width: 210px
+	text-align: center
+	.comment__img
+		position: relative
+		width: 196px
+		height: 196px
+		border: 1px solid #dfdfdf
+		display: inline-block
+		img
+			display: block
+		.comment__marks
+			position: absolute
+			left: -31px
+			bottom: -31px
+			width: 40px
+			height: 40px
+			background-color: #007bb6
+			&:before
+				position: absolute
+				content: ''
+				top: 50%
+				left: 50%
+				+translate(-50%, -50%)
+				+s(marks)
+	.comment__title
+		margin: 22px 0 13px
+		color: #2f2f2f
+		font-size: 16px
+		font-weight: 400
+	.comment__text
+		color: #2f2f2f
+		font-size: 13px
+		font-style: italic
+	.comment__user
+		margin-top: 16px
+		color: #6c6c6c
+		font-size: 13px
+		font-weight: 400
+
+.logos
+	margin: 28px 0
+	width: 100%
+	display: table
+	.logos__item
+		display: table-cell
+		height: 97px
+		line-height: 97px
+		text-align: center
+	.ico
+		vertical-align: middle
+		+transition(none)
+		
+
+// nav
+.nav
+	margin-left: -6px
+	.nav__item
+		display: block
+	a
+		padding: 6px
+		font-size: 15px
+		color: #000
+		font-weight: 500
+		display: block
+		&:hover
+			background-color: #ebebeb
+			.nav__ico
+				background-color: #007BB6
+		&.is-active
+			.nav__ico
+				background-color: #E80006
+	.nav__ico
+		margin-right: 20px
+		width: 40px
+		height: 40px
+		line-height: 40px
+		text-align: center
+		background-color: #3d3d3d
+		display: inline-block
+		+transition(all .1s linear)
+	.ico
+		vertical-align: middle
 
 
+// discount
+.discount
+	position: relative
+	margin: 50px 0 0 
+	width: 180px
+	padding-top: 25px
+	font-size: 15px
+	font-weight: 500
+	text-align: center
+	border: 1px dashed #959595
+	&:before
+		position: absolute
+		content: ''
+		top: -11px
+		left: 26px
+		z-index: 2
+		+s(discount-ico)
+	&:after
+		position: absolute
+		content: ''
+		left: 10px
+		top: -1px
+		width: 75px
+		height: 2px
+		z-index: 1
+		background: #fff
+	.discount__title
+		position: relative
+		line-height: 39px
+		font-size: 26px
+		font-weight: 700
+		text-transform: uppercase
+		display: inline-block
+		&:before
+			position: absolute
+			content: ''
+			top: 0
+			right: -15px
+			z-index: -1
+			+s(ico-flag)
+		span
+			color: white
+	.discount__text
+		padding: 26px
+		strong
+			font-weight: 700
+	.address
+		padding: 9px 0
+		font-size: 15px
+		font-weight: 500
+		line-height: 1.2
+		background-color: #efefef
+		.address__phone
+			margin-top: 10px
 
+// banner
+.banner
+	margin: 50px 0 0 
+	img
+		display: block
 
+// soc
+.soc
+	font-size: 0
+	li
+		margin-left: 26px
+		display: inline-block
+		&:first-child
+			margin-left: 0
+	a
+		&:hover
+			+opacity(.8)
 
+// popup
+.popup
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	background: rgba(#fff, .8)
+	display: none
+	.popup__in
+		position: relative
+		margin: 164px auto
+		padding: 40px
+		width: 421px
+		+box-shadow(0 1px 9px #000)
+		+border-radius(4px)
+		cursor: default
+		z-index: 1
+		background: #f0f0f0
+		+box
+	.popup__close
+		position: absolute
+		top: 12px
+		right: 12px
+		+s(popup-close)
+	.popup-overley
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		cursor: pointer
+	.btn
+		width: 100%
 
+// form
+.form
+	.form__field
+		font-size: 0
+		margin-top: 13px
+		&:first-child
+			margin-top: 0
+	input, textarea
+		padding-left: 20px
+		width: 100%
+		height: 56px
+		font-size: 15px
+		font-weight: 500 !important
+		color: #2F2F2F
+		background-color: white
+		+border-radius(4px)
+		+box-shadow(0 1px 0 white, inset 0 1px 5px rgba(0, 0, 0, 0.38))
+		+box
+		+rob
+		+placeholder
+			font-size: 15px
+			font-weight: 500
+			color: #2F2F2F
+		&:focus
+			+placeholder
+				font-size: 0
+	textarea
+		padding-top: 18px
+		height: 87px
+		border: none
+		resize: none
+	.form__col 
+		margin-left: 9px
+		vertical-align: top
+		display: inline-block
+		+box
+		&:first-child
+			margin-left: 0
+		&.form__col_w66
+			padding: 8px 0 0 15px
+			width: 66px
+			color: #656565
+			font-size: 15px
+			font-weight: 400
+		&.form__col_date
+			position: relative
+			width: 155px
+		&.form__col_w102
+			width: 102px
+		.ui-datepicker-trigger
+			position: absolute
+			margin-top: -8px
+			right: 21px
+			top: 50%
+			z-index: 1
+			cursor: pointer
+			background-color: white
 
+// select
+.select
+	position: relative
+	cursor: pointer
+	font-size: 15px
+	select
+		position: absolute
+		z-index: -1
+		opacity: 0
+	.select__text
+		position: relative
+		padding: 0 20px
+		height: 56px
+		line-height: 56px
+		font-weight: 500
+		color: #2F2F2F
+		background-color: white
+		+border-radius(4px)
+		+box-shadow(0 1px 0 white, inset 0 1px 5px rgba(0, 0, 0, 0.38))
+		+box
+		+user-select(none)
+		white-space: nowrap
+		overflow: hidden
+		text-overflow: ellipsis
+		display: block
+		&:after
+			content: ""
+			position: absolute
+			right: 20px
+			top: 50%
+			margin-top: -3px
+			width: 0px
+			height: 0px
+			border-style: solid
+			border-width: 6px 4px 0 4px
+			border-color: #000 transparent transparent transparent
+	.select__list
+		position: absolute
+		display: none
+		left: 0
+		right: 0
+		top: 100%
+		z-index: 100
+		border: 1px solid #d8d8d8
+		border-top: 0 
+		max-height: 200px
+		overflow-x: hidden
+		overflow-y: auto
+		background: #fff
+		li
+			padding: 5px 11px 
+			cursor: pointer
+			line-height: 1
+			&:hover
+				background: #717791
+				color: #fff 
 
+// copy
+.copy
+	color: #7F7F7F
+	font-size: 12px
+	span
+		margin-right: 10px
+	a
+		color: #007BB6
+		&:hover
+			text-decoration: underline
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// footer
+.footer
+	margin-top: -97px
+	height: 97px
+	background-color: #e8e8e8
+	.footer__row
+		+clr
+	.soc
+		float: left
+	.menu
+		float: right
+		margin: 10px 160px 0 0
+		a
+			text-transform: inherit
+			font-weight: 400
+	.in
+		position: relative
+		padding: 15px 306px 15px 35px
+	.contact
+		top: auto
+		bottom: 0
+		width: 271px
+	.callback
+		.callback__phone
+			margin-top: 9px
+			font-size: 14px
+	.copy
+		margin-top: 22px
 
 
 
