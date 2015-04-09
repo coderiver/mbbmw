@@ -56,6 +56,18 @@
 	+box
 
 
++keyframes(scroll)
+	0%
+		fill: #3d3d3d
+	100%
+		fill: #bbbbbb
+
++keyframes(opacity)
+	0%
+		opacity: 1
+	100%
+		opacity: 0
+
 body
 	font-size: 14px 
 	line-height: 1.4
@@ -291,9 +303,36 @@ body
 
 // tooic
 .topic
+	position: relative
 	padding: 28px 0 26px
+	min-width: 1200px
+	height: 284px
+	overflow: hidden
 	background: url(../img/topic-bg.png) no-repeat 50% 50%
 	background-size: cover
+	.topic__slider
+		position: absolute
+		top: 0
+		left: 0
+		bottom: 0
+		right: 0
+		overflow: hidden
+		.topic__slide
+			width: 100%
+			height: 284px
+	.topic__slide
+		img
+			+animation(opacity .8s infinite)
+	.topic__slide.slick-active
+		img
+			+animation(none)
+	.topic__in
+		position: relative
+		@extend .in
+		img
+			position: absolute
+			right: -50px
+			+translate(0, -14.5%)
 	.topic__left
 		float: left
 	.topic__right
@@ -306,25 +345,38 @@ body
 		font-weight: 700
 		line-height: 0.7
 		text-transform: uppercase
-		&:before
+		.arr
 			position: absolute
-			content: ''
 			top: 50%
 			right: -70px
 			margin-top: -24.5px
-			+s(ico-arrbtn)
 		span
 			font-size: 18px
 			font-weight: 500
 			text-transform: initial
 	&.topic_home
 		padding: 78px 0
-		background: url(../img/topic-bg-home.png) no-repeat 50% 88%
 		.topic__text
 			margin-bottom: 30px
-			&:before
+			.arr
 				top: 54px
 				right: -20px
+
+.arr
+	background: none
+	.arr1
+		path
+			+animation(scroll .6s 800ms infinite)
+	.arr2
+		position: relative
+		margin-left: -15px
+		path
+			+animation(scroll .6s 400ms infinite)
+	.arr3
+		position: relative
+		margin-left: -15px
+		path
+			+animation(scroll .6s  infinite)
 
 // lineup
 .filter
@@ -376,7 +428,7 @@ body
 		font-weight: 700
 		line-height: 1.2
 		text-transform: uppercase
-	h3, h4, h5, h6
+	h3, h4, h5, h6, .title
 		margin: 20px 0
 	h1
 		font-size: 32px
@@ -463,6 +515,15 @@ body
 			&:first-child
 				margin-left: 0
 
+// title
+.title
+	font-size: 22px
+	font-weight: 700
+	line-height: 1.2
+	text-transform: uppercase
+	span
+		text-transform: initial
+
 // blue-block
 .blue-block
 	padding: 15px 70px 15px 22px
@@ -522,19 +583,71 @@ body
 		text-transform: uppercase
 		color: #000
 		display: inline-block
-		&:hover
-			+transform(scale(1.1))
+		// &:hover
+		// 	+transform(scale(1.1))
 		&:first-child
 			margin-left: 0
 	.series__img
 		position: relative
 		height: 110px
-		img
-			position: absolute
-			top: 50%
-			left: 0
-			width: 100%
-			+translate(0, -50%)
+		background-size: contain
+		// +transition(all .1s linear)
+		// img
+		// 	position: absolute
+		// 	top: 50%
+		// 	left: 0
+		// 	width: 100%
+		// 	+translate(0, -50%)
+		&.series__img_bmw1
+			background: url(../img/bmw-x1.png) no-repeat 50% 50%
+			background-size: contain
+			&:hover
+				background: url(../img/bmw1-hover.png) no-repeat 50% 50%
+		&.series__img_bmw3
+			background: url(../img/bmw3.png) no-repeat 50% 50%
+			background-size: contain
+			&:hover
+				background: url(../img/bmw3-hover.png) no-repeat 50% 50%
+		&.series__img_bmw5
+			background: url(../img/bmw5.png) no-repeat 50% 50%
+			background-size: contain
+			&:hover
+				background: url(../img/bmw5-hover.png) no-repeat 50% 50%
+		&.series__img_bmw6
+			background: url(../img/bmw6.png) no-repeat 50% 50%
+			background-size: contain
+			&:hover
+				background: url(../img/bmw6-hover.png) no-repeat 50% 50%
+		&.series__img_bmw7
+			background: url(../img/bmw7.png) no-repeat 50% 50%
+			background-size: contain
+			&:hover
+				background: url(../img/bmw7-hover.png) no-repeat 50% 50%
+		&.series__img_bmw-x1
+			background: url(../img/bmw-x1.png) no-repeat 50% 50%
+			background-size: contain
+			&:hover
+				background: url(../img/bmw-x1-hover.png) no-repeat 50% 50%
+		&.series__img_bmw-x3
+			background: url(../img/bmw-x3.png) no-repeat 50% 50%
+			background-size: contain
+			&:hover
+				background: url(../img/bmw-x3-hover.png) no-repeat 50% 50%
+		&.series__img_bmw-x5
+			background: url(../img/bmw-x5.png) no-repeat 50% 50%
+			background-size: contain
+			&:hover
+				background: url(../img/bmw-x5-hover.png) no-repeat 50% 50%
+		&.series__img_bmw-x6
+			background: url(../img/bmw-x6.png) no-repeat 50% 50%
+			background-size: contain
+			&:hover
+				background: url(../img/bmw-x6-hover.png) no-repeat 50% 50%
+		&.series__img_bmw-m
+			background: url(../img/bmw-m.png) no-repeat 50% 50%
+			background-size: contain
+			&:hover
+				background: url(../img/bmw-m-hover.png) no-repeat 50% 50%
 	.series__name
 		padding: 0 12px
 		height: 30px
@@ -623,6 +736,7 @@ body
 		margin-bottom: 18px
 		height: 110px
 		overflow: hidden
+		+transition(all .05s linear)
 		img
 			position: absolute
 			top: 0
@@ -630,12 +744,15 @@ body
 			height: 100%
 			+translate(-50%, 0)
 			display: block
-	.news__title
+	.news__link
+		display: block
 		margin-bottom: 8px
 		color: #007BB6
 		font-size: 16px
 		&:hover
 			text-decoration: underline
+			.news__img
+				+opacity(.8)
 	.news__all
 		text-align: right
 		a
@@ -742,10 +859,13 @@ body
 	margin: 50px 0 0 
 	width: 180px
 	padding-top: 25px
+	color: #000
 	font-size: 15px
 	font-weight: 500
 	text-align: center
+	text-decoration: none
 	border: 1px dashed #959595
+	display: block
 	&:before
 		position: absolute
 		content: ''
@@ -794,6 +914,7 @@ body
 // banner
 .banner
 	margin: 50px 0 0 
+	display: block
 	img
 		display: block
 

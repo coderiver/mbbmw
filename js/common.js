@@ -10,13 +10,26 @@ head.ready(function() {
 		cssEase: 'linear'
 	});
 
+	// topic slider
+	$('.js-topic-slider').slick({
+		dots: false,
+		infinite: true,
+		arrows: false,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		speed: 800,
+		autoplay: true,
+		pauseOnHover: 'false',
+		autoplaySpeed: 3000,
+		cssEase: 'ease-in'
+	});
+
 	// click
 	$(document).click(function() {
 		$(".js-select").removeClass("is-active");
 		$(".js-select-list").slideUp(100);
 	});
 	
-
 	// popup
 	$('.js-open-popup').on('click', function(){
 		$('.js-popup').show();
@@ -69,5 +82,8 @@ head.ready(function() {
 		buttonImageOnly: false,
 		buttonImage: "img/calendar-ico.png"
 	});
+
+	// fancybox
+	$('.fancybox').fancybox();
 
 });
