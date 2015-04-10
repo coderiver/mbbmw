@@ -233,8 +233,11 @@ body a { text-decoration: none; -moz-transition: all 0.1s linear; -o-transition:
 .galery .galery__slider .slick-next:before, .galery .galery__slider .slick-prev:before { display: none; }
 .galery .galery__slider .slick-next { right: -25px; background: url('../img/icons-s475f377481.png') 0 -40px no-repeat; width: 18px; height: 30px; }
 .galery .galery__slider .slick-prev { left: -35px; background: url('../img/icons-s475f377481.png') 0 0 no-repeat; width: 18px; height: 30px; }
+.galery .galery__slide { position: relative; }
+.galery .galery__slide:hover .galery__btn { visibility: visible; filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false); opacity: 1; }
+.galery .slick-list { left: -9px; padding: 0 0 9px 9px; }
 .galery .dalery__wrap { position: relative; }
-.galery .galery__btn { position: absolute; left: -10px; bottom: -10px; width: 40px; height: 40px; z-index: 200; background-color: #007bb6; }
+.galery .galery__btn { position: absolute; left: -10px; bottom: -10px; width: 40px; height: 40px; z-index: 200; background-color: #007bb6; visibility: hidden; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0); opacity: 0; -moz-transition: all 0.1s linear; -o-transition: all 0.1s linear; -webkit-transition: all 0.1s linear; transition: all 0.1s linear; }
 .galery .galery__btn:before { position: absolute; content: ""; top: 50%; left: 50%; -moz-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%); background: url('../img/icons-s475f377481.png') 0 -142px no-repeat; width: 16px; height: 16px; }
 
 .news { *zoom: 1; }

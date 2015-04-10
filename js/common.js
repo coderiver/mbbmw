@@ -84,6 +84,6 @@ head.ready(function() {
 	});
 
 	// fancybox
-	$('.fancybox').fancybox();
+	$('.js-fancybox').fancybox();
 
 });

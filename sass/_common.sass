@@ -683,6 +683,15 @@ body
 		.slick-prev
 			left: -35px
 			+s(arr-left)
+	.galery__slide
+		position: relative
+		&:hover
+			.galery__btn
+				visibility: visible
+				+opacity(1)
+	.slick-list
+		left: -9px
+		padding: 0 0 9px 9px
 	.dalery__wrap
 		position: relative
 	.galery__btn
@@ -693,6 +702,9 @@ body
 		height: 40px
 		z-index: 200
 		background-color: #007BB6
+		visibility: hidden
+		+opacity(0)
+		+transition(all .1s linear)
 		&:before
 			position: absolute
 			content: ''
